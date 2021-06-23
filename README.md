@@ -28,6 +28,6 @@ The training on the heterogeneous graph is done is using rGCN []. rGCN is a vari
 To classify the edges (number of stars per review), in the last layer we sample all the edges that are marked for training. Then, we multiply the embedding of the two nodes of the edge element-wise (Hadamard product) in order to generate an embedding for the edge. A linear transformation is then applied to the edge embeddings by multiplying them with a weight matrix and then a softmax is applied row-wise in order to generate a probability for the five types of edges. Figure 3 details the different components of the architecture.
 
 <p align="center">
-  <img width="300" height="400" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/data%20augementation.png">
+  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
 </p>
  <p align="center"><em>Figure 3 - rGCN archtiecture</em></p>
