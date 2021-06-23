@@ -234,7 +234,7 @@ def train(model_name, graph, inputs, input_size, hidden_size, embedding_size, ep
 
 def sample_positive(dgl_graph, inputs):
     """
-    This function sample the training edeges and calculates the embedding
+    This function samples the training edges and calculates the embedding
     of the edge by doing element wise multiplication of the embedding of its nodes
     :param dgl_graph: the graph
     :param inputs: the embedding
