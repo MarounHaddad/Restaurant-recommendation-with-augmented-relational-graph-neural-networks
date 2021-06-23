@@ -7,5 +7,6 @@ In this work, we model the relation between the users and the restaurants as a h
 
 <p align="center">
   <img width="500" height="400" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/bipartite%20heterogenous%20graph.png">
+  <figcaption>{{ asasas }}</figcaption>
 </p>
 
