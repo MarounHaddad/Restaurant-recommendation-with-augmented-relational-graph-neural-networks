@@ -1,5 +1,5 @@
 """
-This file contains the functions that are used to visualize the embedding
+This file contains the functions that are used to visualize the embeddings
 """
 import matplotlib.pyplot as plt
 import networkx as nx
