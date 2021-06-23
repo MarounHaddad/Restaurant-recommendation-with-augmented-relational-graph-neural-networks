@@ -58,12 +58,17 @@ For both the GCN and rGCN models, we use two layers with a hidden layer size of 
 
 Table 4 details the results of our experiments. The models rGCN outperform the vanilla GCN, highlighting the importance of the inclusion of the edge type in the learning process. Furthermore, the rGCN model with data augmentation having minimum support of 0.01 outperforms all the other models. This preliminary result highlights the advantages of data augmentation when performed using mined association rules.
 
+<p align="center">
+  <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/prediction%20examples.png">
+</p>
+<p align="center"><em>Table 4 - Preliminary results.</em></p>
+
 Table 5 demonstrates some of the samples predicted by rGCN-Aug(minsup=0.01). The color-coding is as follows, Green: exact match to the stars in the review, Light brown: minor error, and Red: Major error. We find that the model tends to overestimate the results. In the example highlighted in red, there is a big difference between the score given by the model and the actual score given by the user, however, we do find that the score 5 is close to the actual general score of the restaurant on  Yelp. Also, a noticeable result for the user Emmy on the restaurant Ucan (highlighted in bold), we find that the model did a good job at low scoring the restaurant, which in practice would prevent the model from recommending a restaurant that would be disliked by the user, overall improving the user experience on the platform.
 
 <p align="center">
   <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/prediction%20examples.png">
 </p>
-<p align="center"><em>Table 4 - Prediction samples by rGCN-Aug(minsup=0.01).</em></p>
+<p align="center"><em>Table 5 - Prediction samples by rGCN-Aug(minsup=0.01).</em></p>
 
 ## Background information
 This work was presented as partial requirement for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (Université du Quebec à Montréal).  
