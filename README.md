@@ -30,4 +30,4 @@ To classify the edges (number of stars per review), in the last layer we sample 
 <p align="center">
   <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
 </p>
- <p align="center"><em>Figure 3 - rGCN archtiecture</em></p>
+ <p align="center"><em>Figure 3 - rGCN archtiecture for edge labeling.</em></p>
