@@ -1,6 +1,6 @@
 # Restaurant recommendation with augmented relational graph neural networks
 
-In this project, we use relational graph neural networks for restaurant recommendations. Furthermore, we extract patterns from the interactions of the users and restaurants in order to augment the graph with additional training samples in order to improve the learning.
+In this project, we use relational graph neural networks (rGCN) for restaurant recommendations on heterogeneous bipartite graphs. Furthermore, we extract patterns or associations from the interactions of the users and restaurants in order to augment the graph with additional training samples for the goal of improving the learning of the model.  
 
 ## Problem definition
 In this work, we model the relationship between the users and the restaurants as a heterogeneous bipartite graph, Figure 1. The nodes in the graph belong to two types: Users and Restaurants. The edges that connect the nodes are the reviews written by the users about the restaurants. The number of stars granted by the user in the review is represented as a type of edge in the heterogeneous graph. The problem of recommendation is then treated as a task of semi-supervised edge labeling on the heterogenous bipartite graph. In this case, the model is trained on a subset of labeled edges in order to properly label another test subset. The labels to be classified are the type of edge in the graph (i.e. the number of stars the user granted to the restaurant). By properly predicting the label on the edge or the number of stars this user would grant this restaurant, we could effectively recommend or not recommend the restaurant for the user.
@@ -32,26 +32,42 @@ To classify the edges (number of stars per review), in the last layer we sample 
 </p>
  <p align="center"><em>Figure 3 - rGCN archtiecture for edge labeling.</em></p>
 
-## Experimental setup
+## Training and results
 
 For all our experiments we use python with the libraries: pytroch, NetworkX, and DGL (Deep Graph Library)[] on a machine with NVIDIA GPU GeForce GTX 1050 (12 GB).  
 We build the graph from the Yelp research dataset []. We sample 1000 users that reviewed restaurants in the Montreal area. We split the data for semi-supervised training into two batches training and testing. We take all the reviews prior to 2017 as training and all the reviews from 2017 onwards as testing. Table 1 lists the statistics of the used dataset.
 
 <p align="center">
-  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+  <img width="40%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/dataset%20statistics.PNG">
 </p>
-<p align="left"><em>Table 1 - Dataset statistics.</em></p>
+<p align="center"><em>Table 1 - Dataset statistics.</em></p>
 
 Table 2 details the distribution of the classes (star numbers) in the training and test batches. We remarque that the classes are not balanced. The data augmentation that we will perform will help mitigate this problem. In order to augment the data, we test 3 minimum supports for FP-Growth. The number of edges added per minimum support is detailed in table 3.
 
 <p align="center">
-  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+  <img width="30%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/classes%20distribution.PNG">
 </p>
-<p align="left"><em>Table 2 - Classes distribution.</em></p>
+<p align="center"><em>Table 2 - Classes distribution.</em></p>
 
 <p align="center">
-  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+  <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/data%20augementation%20results.PNG">
 </p>
-<p align="left"><em>Table 3 - Data augmentation results.</em></p>
+<p align="center"><em>Table 3 - Data augmentation results.</em></p>
 
-## Training and hyperparameters
+For both the GCN and rGCN models, we use two layers with a hidden layer size of 16 and ReLU activation functions. We train for 300 epochs with a patience of 30. We use the Cross-Entropy loss and the Adam optimizer with a learning rate of 0.001. We evaluate the performance of the models with RMSE (Root Mean Squared Error), which calculates the difference between the predicted and ground truth stars.  
+
+Table 4 details the results of our experiments. The models rGCN outperform the vanilla GCN, highlighting the importance of the inclusion of the edge type in the learning process. Furthermore, the rGCN model with data augmentation having minimum support of 0.01 outperforms all the other models. This preliminary result highlights the advantages of data augmentation when performed using mined association rules.
+
+Table 5 demonstrates some of the samples predicted by rGCN-Aug(minsup=0.01). The color-coding is as follows, Green: exact match to the stars in the review, Light brown: minor error, and Red: Major error. We find that the model tends to overestimate the results. In the example highlighted in red, there is a big difference between the score given by the model and the actual score given by the user, however, we do find that the score 5 is close to the actual general score of the restaurant on  Yelp. Also, a noticeable result for the user Emmy on the restaurant Ucan (highlighted in bold), we find that the model did a good job at low scoring the restaurant, which in practice would prevent the model from recommending a restaurant that would be disliked by the user, overall improving the user experience on the platform.
+
+<p align="center">
+  <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/prediction%20examples.png">
+</p>
+<p align="center"><em>Table 3 - Data augmentation results.</em></p>
+
+## Background information
+This work was presented as partial requirement of the final project for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (Université du Quebec à Montréal).  
+Maroun Haddad (April 2020).
+
+
+## References
