@@ -59,7 +59,7 @@ For both the GCN and rGCN models, we use two layers with a hidden layer size of 
 Table 4 details the results of our experiments. The models rGCN outperform the vanilla GCN, highlighting the importance of the inclusion of the edge type in the learning process. Furthermore, the rGCN model with data augmentation having minimum support of 0.01 outperforms all the other models. This preliminary result highlights the advantages of data augmentation when performed using mined association rules.
 
 <p align="center">
-  <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/results.PNG">
+  <img width="30%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/results.PNG">
 </p>
 <p align="center"><em>Table 4 - Preliminary results.</em></p>
 
