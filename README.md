@@ -16,6 +16,6 @@ One of the problems that we encounter when training a model on real-life graphs 
 In order to implement the proposed method for our case study, first we filter all the training edges by type (number of stars). We consider the restaurants granted the filtered number of stars as our basket. We apply FP-Growth on the filtered data and take all the frequent rules of size 2. For every user, we verify if he is already connected to one of the two restaurants in the rule, we connect him to the other restaurant with the same edge type as the number of stars filtered at the start. This process is repeated for all 5 types of edges (number of stars). Figure 2 summerizes the augmentation process. User John has already granted the restaurant Belon 4 stars. Since Belon is frequently visited by the same users that visit Milos restaurant and grant them both 4 stars. We connect John to Milos restaurant with 4 stars
 
 <p align="center">
-  <img width="400" height="300" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/bipartite%20heterogenous%20graph.png">
+  <img width="300" height="400" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/data%20augementation.png">
 </p>
  <p align="center"><em>Figure 2 - Data augmentation example for the 4 stars edges.</em></p>
