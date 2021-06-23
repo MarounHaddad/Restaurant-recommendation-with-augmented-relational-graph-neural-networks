@@ -31,3 +31,27 @@ To classify the edges (number of stars per review), in the last layer we sample 
   <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
 </p>
  <p align="center"><em>Figure 3 - rGCN archtiecture for edge labeling.</em></p>
+
+## Experimental setup
+
+For all our experiments we use python with the libraries: pytroch, NetworkX, and DGL (Deep Graph Library)[] on a machine with NVIDIA GPU GeForce GTX 1050 (12 GB).  
+We build the graph from the Yelp research dataset []. We sample 1000 users that reviewed restaurants in the Montreal area. We split the data for semi-supervised training into two batches training and testing. We take all the reviews prior to 2017 as training and all the reviews from 2017 onwards as testing. Table 1 lists the statistics of the used dataset.
+
+<p align="center">
+  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+</p>
+<p align="left"><em>Table 1 - Dataset statistics.</em></p>
+
+Table 2 details the distribution of the classes (star numbers) in the training and test batches. We remarque that the classes are not balanced. The data augmentation that we will perform will help mitigate this problem. In order to augment the data, we test 3 minimum supports for FP-Growth. The number of edges added per minimum support is detailed in table 3.
+
+<p align="center">
+  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+</p>
+<p align="left"><em>Table 2 - Classes distribution.</em></p>
+
+<p align="center">
+  <img width="700" height="350" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/architecture.png">
+</p>
+<p align="left"><em>Table 3 - Data augmentation results.</em></p>
+
+## Training and hyperparameters
