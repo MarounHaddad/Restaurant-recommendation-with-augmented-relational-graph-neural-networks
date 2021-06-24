@@ -38,7 +38,7 @@ For all our experiments we use python with the libraries: pytroch, NetworkX, and
 We build the graph from the Yelp research dataset [5]. We sample 1000 users that reviewed restaurants in the Montreal area. We split the data for semi-supervised training into two batches training and testing. We take all the reviews prior to 2017 as training and all the reviews from 2017 onwards as testing. Table 1 lists the statistics of the used dataset.
 
 <p align="center">
-  <img width="40%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/dataset%20statistics.PNG">
+  <img width="35%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/dataset%20statistics.PNG">
 </p>
 <p align="center"><em>Table 1 - Dataset statistics.</em></p>
 
@@ -50,7 +50,7 @@ Table 2 details the distribution of the classes (star numbers) in the training a
 <p align="center"><em>Table 2 - Classes distribution.</em></p>
 
 <p align="center">
-  <img width="50%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/data%20augementation%20results.PNG">
+  <img width="40%" src="https://github.com/MarounHaddad/Restaurant-recommendation-with-augmented-relational-graph-neural-networks/blob/main/images/data%20augementation%20results.PNG">
 </p>
 <p align="center"><em>Table 3 - Data augmentation results.</em></p>
 
