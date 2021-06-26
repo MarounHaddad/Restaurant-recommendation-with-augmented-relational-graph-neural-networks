@@ -1,4 +1,4 @@
-# Restaurant recommendation with augmented relational graph neural networks
+# Restaurant Recommendation with Augmented Relational Graph Neural Networks
 
 In this project, we use relational graph neural networks (rGCN) for restaurant recommendations on heterogeneous bipartite graphs. Furthermore, we extract patterns or associations from the interactions of the users and restaurants in order to augment the graph with additional training samples for the goal of improving the learning of the model.  
 
