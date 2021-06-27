@@ -80,4 +80,4 @@ Maroun Haddad (April 2020).
 [2] Kipf, T. N. and Welling, M. (2017). Semi-supervised classification with graph convolu-tional networks. In proceedings of the 5th International Conference on Learning Representations,ICLR.  
 [3] Schlichtkrull, M. S., Kipf, T. N., Bloem, P., van den Berg, R., Titov, I. and Welling, M.(2018). Modeling relational data with graph convolutional networks. In proceedings of the 15th International Conference.  
 [4] Wang, M., Yu, L., Zheng, D., Gan, Q., Gai, Y., Ye, Z., Li, M., Zhou, J., Huang, Q., Ma,C., Huang, Z., Guo, Q., Zhang, H., Lin, H., Zhao, J., Li, J., Smola, A. J. and Zhang, Z.(2019). Deep graph library : Towards efficient and scalable deep learning on graphs.  
-[5] Yelp dataset. Retreived from https://www.yelp.com/dataset  
+[5] Yelp dataset. Retrieved from https://www.yelp.com/dataset  
