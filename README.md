@@ -71,7 +71,7 @@ Table 5 demonstrates some of the samples predicted by rGCN-Aug(minsup=0.01). The
 <p align="center"><em>Table 5 - Prediction samples by rGCN-Aug(minsup=0.01).</em></p>
 
 ## Background information
-This work was presented as partial requirement for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (Université du Quebec à Montréal).  
+This work was presented as partial requirement for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (University of Quebec at Montreal).  
 Maroun Haddad (April 2020).  
 
 Complete report and presentation under: **\presentation and report in French** . 
